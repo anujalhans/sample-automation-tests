@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.env
+.env.*
+*.egg-info/
+
+# VS Code
+.vscode/
+
+# Test artifacts
+results/
+report.html
+
+# OS files
+.DS_Store
+Thumbs.db
