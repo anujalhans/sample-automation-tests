@@ -19,14 +19,14 @@ def test_royal_enfield_title(browser):
 def test_royal_enfield_logo_visible(browser):
     """Check if the Royal Enfield logo is displayed"""
     browser.get("https://www.royalenfield.com/in/en/home/")
-    logo = browser.find_element(By.CSS_SELECTOR, "img[alt='Royal Enfield Logo']")
+    logo = browser.find_element(By.CSS_SELECTOR, "img[alt='Royal Enfield India']")
     assert logo.is_displayed(), "Royal Enfield logo should be visible on the homepage"
 
 
 def test_motorcycles_navigation(browser):
     """Check if navigation to 'Motorcycles' page works"""
     browser.get("https://www.royalenfield.com/in/en/home/")
-    motorcycles_link = browser.find_element(By.LINK_TEXT, "Motorcycles")
+    motorcycles_link = browser.find_element(By.XPATH, "//a[@title='Motorcycles']//span[@class='desktop-title-text']")
     motorcycles_link.click()
 
     # Allow time for navigation (you can replace with WebDriverWait if needed)
