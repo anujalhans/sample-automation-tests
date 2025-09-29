@@ -44,6 +44,6 @@ def test_motorcycles_navigation(browser):
     motorcycles_link = browser.find_element(By.XPATH, "//a[@title='Motorcycles']//span[@class='desktop-title-text']")
     motorcycles_link.click()
 
-    # Allow little time for navigation (you can replace with WebDriverWait if needed)
+    # Allow more time for navigation (you can replace with WebDriverWait if needed)
     browser.implicitly_wait(5)
     assert "Motorcycles" in browser.title or "motorcycles" in browser.current_url
