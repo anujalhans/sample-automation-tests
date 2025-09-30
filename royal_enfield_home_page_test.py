@@ -67,7 +67,7 @@ def test_royal_enfield_locate_us(browser):
     # Assert the new tab title
     assert "locate-us" in browser.current_url
 
-    # Optional: Close the new tab and switch back to original
+    # Optional: Close the new tab and switch it back to original
     browser.close()
     browser.switch_to.window(original_window)
 
