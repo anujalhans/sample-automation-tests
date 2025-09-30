@@ -47,3 +47,27 @@ def test_motorcycles_navigation(browser):
     # Allow more time for navigation (you can replace with WebDriverWait if needed)
     browser.implicitly_wait(5)
     assert "Motorcycles" in browser.title or "motorcycles" in browser.current_url
+
+def test_royal_enfield_locate_us(browser):
+    browser.get("https://www.royalenfield.com/in/en/home/")
+    accept_cookies_if_present(browser)
+    locate_link = browser.find_element(By.XPATH, "//a[@title='Locate Us']//span[@class='desktop-title-text']")
+    locate_link.click()
+    # Wait for the new tab to open
+    browser.implicitly_wait(5)
+
+    # Switch to the new tab
+    original_window = browser.current_window_handle
+    all_windows = browser.window_handles
+    for handle in all_windows:
+        if handle != original_window:
+            browser.switch_to.window(handle)
+            break
+
+    # Assert the new tab title
+    assert "locate-us" in browser.current_url
+
+    # Optional: Close the new tab and switch back to original
+    browser.close()
+    browser.switch_to.window(original_window)
+
