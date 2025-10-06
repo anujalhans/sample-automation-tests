@@ -64,10 +64,10 @@ def test_royal_enfield_locate_us(browser):
             browser.switch_to.window(handle)
             break
 
-    # Now Assert the Locate Us in current browser URL
+    # Now please Assert the Locate Us in current browser URL
     assert "locate-us" in browser.current_url
 
-    # Optional: Close now this tab and switch it back to original
+    # Optional: Please Close now this tab and switch it back to original
     browser.close()
     browser.switch_to.window(original_window)
 
